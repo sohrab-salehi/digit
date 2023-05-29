@@ -5,8 +5,19 @@ import { Layout, Menu } from "antd";
 const { Header, Content, Footer } = Layout;
 
 function MainLayout(): JSX.Element {
-    // const location = useLocation();
-    const selectedNavbarItem = "home";
+    const location = useLocation();
+    const selectedNavbarItem = () => {
+        switch (location.pathname) {
+            case "/":
+                return "home";
+            case "/login":
+                return "login";
+            case "/register":
+                return "register";
+            default:
+                return "home";
+        }
+    };
 
     return (
         <Layout style={{ minHeight: "100vh" }}>
@@ -14,7 +25,7 @@ function MainLayout(): JSX.Element {
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    selectedKeys={[selectedNavbarItem]}
+                    selectedKeys={[selectedNavbarItem()]}
                     items={[
                         {
                             key: "home",
