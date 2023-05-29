@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, message } from "antd";
+import { Card, Col, Row, message } from "antd";
 import { getUser } from "../api/user";
 
 function Login() {
@@ -25,9 +25,17 @@ function Login() {
     }, [navigate]);
 
     return (
-        <Card title="Greeting" bordered={false} style={{ width: 600 }}>
-            <p>Welcome! {username}</p>
-        </Card>
+        <Row>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                <Card
+                    title="Greeting"
+                    bordered={false}
+                    style={{ maxWidth: 600, margin: "auto" }}
+                >
+                    <p>Welcome! {username}</p>
+                </Card>
+            </Col>
+        </Row>
     );
 }
 
