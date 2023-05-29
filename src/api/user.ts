@@ -9,10 +9,16 @@ export const login = (username: string, password: string) => {
     return result;
 };
 
-export const getUser = () => {
-    const result = server.get("/getUser").then((response) => {
-        return response;
-    });
+export const getUser = (token: string) => {
+    const result = server
+        .get("/getUser", {
+            headers: {
+                Authorization: token,
+            },
+        })
+        .then((response) => {
+            return response;
+        });
     return result;
 };
 
