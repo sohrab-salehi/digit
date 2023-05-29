@@ -7,7 +7,7 @@ This is a simple example project showcasing user authentication using React and 
 ## Features
 
 - Login: Users can log in with their username and password.
-- Register: New users can create an account by providing a username and password.
+- Register(just backend part is implemented): New users can create an account by providing a username and password.
 - Protected Route: Access to the welcome page is protected. Only authenticated users can access it.
 
 ### Linter & code formatter
