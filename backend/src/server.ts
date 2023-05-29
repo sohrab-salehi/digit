@@ -1,13 +1,15 @@
 import express, { Request, Response, NextFunction } from "express";
 import jwt, { Secret } from "jsonwebtoken";
+import cors from "cors";
 import fs from "fs";
 
 const app = express();
 const secretKey: Secret = "digitSecretKey";
-const port = 3000;
+const port = 8000;
 const usersFilePath = "users.json";
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/register", (req: Request, res: Response) => {
     const { username, password } = req.body;
