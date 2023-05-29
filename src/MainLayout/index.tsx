@@ -31,7 +31,7 @@ function MainLayout(): JSX.Element {
                     ]}
                 />
             </Header>
-            <Content style={{ padding: "0 50px" }}>
+            <Content style={{ padding: "50px" }}>
                 <Outlet />
             </Content>
             <Footer style={{ textAlign: "center" }}>

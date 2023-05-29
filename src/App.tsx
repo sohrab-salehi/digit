@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import MainLayout from "./MainLayout";
+import Welcome from "./Welcome";
 import Login from "./Login";
 import ErrorPage from "./ErrorPage";
 
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                element: <Login />,
+                element: <Welcome />,
                 index: true,
             },
             {

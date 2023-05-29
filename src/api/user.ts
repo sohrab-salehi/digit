@@ -9,4 +9,11 @@ export const login = (username: string, password: string) => {
     return result;
 };
 
+export const getUser = () => {
+    const result = server.get("/getUser").then((response) => {
+        return response;
+    });
+    return result;
+};
+
 export default login;

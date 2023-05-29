@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, Card, Checkbox, Form, Input } from "antd";
 
-import login from "../api/Auth";
+import login from "../api/user";
 
 function Login() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
         login(username, password).then((result) => {
             const { token } = result.data;
             localStorage.setItem("token", token);
-            return redirect("/");
+            navigate("/");
         });
     };
 
