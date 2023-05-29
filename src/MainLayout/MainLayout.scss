@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+        display: flex;
+        
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100px;       
+            }
+            
+        }
+    }
+
+    .mobile-menu-button {
+        color: white;     
+        font-size: 20px;
+    }
+}
+
+@media (max-width : 768px) {
+    .main-nav {
+        display: none;
+    }
+  }
+  
+@media (min-width : 768px) {
+    .mobile-menu-button {
+        display: none;
+    }
+}
